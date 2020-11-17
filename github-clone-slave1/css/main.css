@@ -175,3 +175,17 @@ header .sub-menu li a {
 header .sub-menu li a:hover {
     color: #4078c0;
 }
+
+/* VISUAL */
+
+.section--visual {
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+.section--visual .inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 160px;
+    background-color: #4078c0;
+}
