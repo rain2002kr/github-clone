@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* COMMON */
 .body__container {
     font-family: 'Roboto', sans-serif;
@@ -7,6 +9,20 @@
 }
 a {
     text-decoration: none;
+}
+
+/* FLOAT CLEARFIX */
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.float--left {
+    float: left;
+}
+.float--right {
+    float: right;
 }
 /* BTN */
 .btn {
@@ -26,19 +42,22 @@ a {
     color: #333;
 }
 
-.btn:hover::before {
+.btn--primary {
+    border: 1px solid #65b836;
+    color: #fff;
+    background: #55a532 linear-gradient(#91dd70, #55ae2e);
+}
+
+.btn::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.07);
 }
-.btn.btn--primary {
-    border: 1px solid #65b836;
-    color: #fff;
-    background: #55a532 linear-gradient(#91dd70, #55ae2e);
+.btn:hover {
+    background: rgba(0, 0, 0, 0.07);
 }
 
 /* 인풋 디자인 */
@@ -71,18 +90,29 @@ a {
     color: #cacaca;
 }
 
-/* FLOAT CLEARFIX */
-.clearfix::after {
-    content: '';
-    clear: both;
-    display: block;
+/* SUMMARY */
+.summary__title {
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.25; /* 글자간 간격 */
+    margin-bottom: 18px;
 }
 
-.float--left {
-    float: left;
+.summary__description {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #767676;
 }
-.float--right {
-    float: right;
+/* SECTION */
+.section {
+    position: relative;
+}
+.section .inner {
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
 }
 
 /* HEADER */
@@ -177,15 +207,27 @@ header .sub-menu li a:hover {
 }
 
 /* VISUAL */
-
 .section--visual {
     background-image: url('../img/bg.jpg');
     background-repeat: no-repeat;
     background-position: bottom left;
+    color: #ffffff;
+    position: relative;
 }
-.section--visual .inner {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 160px;
-    background-color: #4078c0;
+/* 
+#sign-up-form {
+    float: right;
+    width: 300px;
 }
+#sign-up-form .input--text {
+    margin: 10px;
+}
+#sign-up-form > p {
+    font-size: 0.7rem;
+    text-align: center;
+}
+#sign-up-form .btn--primary {
+    margin: 10px;
+    width: 200px;
+}
+ */
