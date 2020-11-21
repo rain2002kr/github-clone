@@ -91,6 +91,8 @@ a {
 }
 
 /* SUMMARY */
+.summary {
+}
 .summary__title {
     font-size: 38px;
     font-weight: 300;
@@ -104,7 +106,7 @@ a {
     line-height: 1.5;
     color: #767676;
 }
-/* SECTION */
+/* SECTION & INNER*/
 .section {
     position: relative;
 }
@@ -123,8 +125,8 @@ header {
 }
 header .inner {
     height: 78px;
-    max-width: 980px;
-    margin: 0 auto; /* 가운데 정렬 : max-width 혹은 width가 정해져 있어야 가운데 정렬이 가능함.*/
+    /* max-width: 980px; */
+    /* margin: 0 auto; */ /* 가운데 정렬 : max-width 혹은 width가 정해져 있어야 가운데 정렬이 가능함.*/
 }
 
 header .menu-group {
@@ -211,9 +213,35 @@ header .sub-menu li a:hover {
     background-image: url('../img/bg.jpg');
     background-repeat: no-repeat;
     background-position: bottom left;
+    background-size: cover; /* 축소해도 마찬가지로 다 덮히는 것 */
     color: #ffffff;
     position: relative;
 }
+/* 배경이미지 어둡게 만들기 */
+.section--visual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.section--visual .inner {
+    padding: 160px 0;
+}
+
+.section--visual .summary__title {
+    color: #fff;
+    font-size: 54px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 25px rgba(0, 0, 0, 0.07); /* 글씨 그림자 */
+}
+.section--visual .summary__description {
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 25px rgba(0, 0, 0, 0.07); /* 글씨 그림자 */
+}
+
 /* 
 #sign-up-form {
     float: right;
