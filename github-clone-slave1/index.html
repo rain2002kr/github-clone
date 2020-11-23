@@ -170,6 +170,43 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Where is -->
+            <section class="section section--where-is">
+                <div class="inner">
+                    <div class="summary">
+                        <div class="summary__title">Where is GitHub?</div>
+
+                        <div class="summary__description">
+                            GitHub is where people build software. More than 18 million people use GitHub to discover, fork, and contribute
+                            to over 48 million projects.
+                        </div>
+                    </div>
+                    <!-- MAP 은 고유해야하기 때문에 ID 로 잡음 -->
+                    <div id="map"></div>
+                </div>
+            </section>
         </div>
     </body>
+
+    <script defer>
+        function initMap() {
+            const myLatLng = { lat: 37.782293, lng: -122.39124 };
+            const map = new google.maps.Map(
+                /* document.querySelectorAll("#map") */
+                document.getElementById('map'),
+                {
+                    center: myLatLng,
+                    scrollwheel: false,
+                    zoom: 18,
+                }
+            );
+            const marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'GitHub',
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=initMap" async defer></script>
 </html>
