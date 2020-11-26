@@ -455,6 +455,17 @@ footer .logo {
 footer .logo svg:hover {
     fill: #4078c0;
 }
+#toggle-btn {
+    display: none;
+    background: url('../img/toggle-btn.svg');
+    width: 18px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    cursor: pointer;
+    text-indent: -9999px;
+}
 
 /* MEDIA */
 /* 이하 일때는 MAX */
@@ -470,6 +481,13 @@ footer .logo svg:hover {
         float: none;
     }
 
+    header .toggle {
+        display: none;
+    }
+
+    header .toggle.on {
+        display: block;
+    }
     header .logo {
         padding: 12px 0;
     }
@@ -512,7 +530,6 @@ footer .logo svg:hover {
     }
     header .sub-menu {
         margin: 12px;
-
         justify-content: center;
     }
 
@@ -521,13 +538,6 @@ footer .logo svg:hover {
     }
 
     #toggle-btn {
-        background: url('../img/toggle-btn.svg');
-        width: 18px;
-        height: 24px;
-        position: absolute;
-        top: 16px;
-        right: 12px;
-        cursor: pointer;
-        text-indent: -9999px;
+        display: block;
     }
 }
